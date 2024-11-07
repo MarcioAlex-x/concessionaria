@@ -1,0 +1,26 @@
+<h1>Lista de Veículos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Situação</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each veiculos}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.modelo}}</td>
+                <td>{{this.marca}}</td>
+                <td>{{this.Situacao.situacao}}</td> 
+                <td>
+                    <a href="/veiculos/edit/{{this.id}}">Editar</a>
+                    <form action="/veiculos/delete/{{this.id}}" method="post"></form>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
